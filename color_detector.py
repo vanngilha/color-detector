@@ -1,7 +1,8 @@
 import cv2
 import pandas as pd
 
-color_data = pd.read_csv('colors.csv')
+with open('colors.csv', 'r', encoding='utf-8') as f:
+    color_data = pd.read_csv(f)
 
 def getColorName(R, G, B):
     min_dist = float('inf')
@@ -13,37 +14,34 @@ def getColorName(R, G, B):
             cname = color_data.loc[i, "color_name"]
     return cname
 
-clicked = False
-r = g = b = xpos = ypos = 0
-
-def drawFunction(event, x, y, flags, param):
-    global b, g, r, xpos, ypos, clicked
-    if event == cv2.EVENT_LBUTTONDOWN:
-        clicked = True
-        xpos = x
-        ypos = y
-        b, g, r = frame[y, x]
-        b = int(b)
-        g = int(g)
-        r = int(r)
-
 cap = cv2.VideoCapture(0)
-cv2.namedWindow('Detector de Cores')
-cv2.setMouseCallback('Detector de Cores', drawFunction)
+cv2.namedWindow('Detector de Cores em Tempo Real')
 
 while True:
     ret, frame = cap.read()
     if not ret:
         break
 
-    if clicked:
-        cv2.rectangle(frame, (20, 20), (750, 60), (b, g, r), -1)
-        text = getColorName(r, g, b) + f' R={r} G={g} B={b}'
-        cv2.putText(frame, text, (30, 50), 2, 0.8, (255, 255, 255) if r+g+b < 600 else (0, 0, 0), 2)
+    h, w, _ = frame.shape
+    cx = w // 2 
+    cy = h // 2 
+    size = 30  
 
-    cv2.imshow("Detector de Cores", frame)
-    
-    if cv2.waitKey(1) & 0xFF == 27: 
+    roi = frame[cy-size:cy+size, cx-size:cx+size]
+    avg_color = roi.mean(axis=0).mean(axis=0)  
+    b, g, r = [int(c) for c in avg_color]
+
+    color_name = getColorName(r, g, b)
+
+    # Desenha a área e o nome da cor
+    cv2.rectangle(frame, (cx-size, cy-size), (cx+size, cy+size), (255, 255, 255), 1)
+    cv2.rectangle(frame, (20, 20), (750, 60), (b, g, r), -1)
+    text = f'{color_name}  R={r} G={g} B={b}'
+    cv2.putText(frame, text, (30, 50), 2, 0.8, (255, 255, 255) if r+g+b < 600 else (0, 0, 0), 2)
+
+    cv2.imshow("Detector de Cores em Tempo Real", frame)
+
+    if cv2.waitKey(1) & 0xFF == 27:
         break
 
 cap.release()
