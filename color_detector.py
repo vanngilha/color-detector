@@ -33,7 +33,6 @@ while True:
 
     color_name = getColorName(r, g, b)
 
-    # Desenha a área e o nome da cor
     cv2.rectangle(frame, (cx-size, cy-size), (cx+size, cy+size), (255, 255, 255), 1)
     cv2.rectangle(frame, (20, 20), (750, 60), (b, g, r), -1)
     text = f'{color_name}  R={r} G={g} B={b}'
