@@ -31,7 +31,7 @@ It's a simple yet powerful tool to help you identify and visualize colors instan
 
 ## 📸 Screenshot
 
-![Color Detector Screenshot](https://via.placeholder.com/800x400.png?text=Color+Detector+Preview)
+![Color Detector Screenshot](https://via.placeholder.com/800x400.png?text=Color+Detector+clePreview)
 
 ---
 
