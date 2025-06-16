@@ -55,7 +55,7 @@ The main goal of this project is to apply **computer vision** concepts in a prac
 
 ## 🖼️ Screenshot
 
-![Color Detector Screenshot](https://ibb.co/Y4hsKs9c)
+![Color Detector Screenshot](https://i.ibb.co/BHBM7MDy/Final-Project-Havard.png)
 
 ---
 
