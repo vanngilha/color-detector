@@ -1,37 +1,61 @@
 # 🎨 Real-Time Color Detector with OpenCV
 
-This project is a **Real-Time Color Detector** built using Python and OpenCV. It captures video from your webcam and displays the name, RGB values, and HEX code of the color located at the center of the screen — updating in real time.
+### 📹 Video Demo:
+> *https://www.youtube.com/watch?v=SoSC_lMgSrE*
 
-It's a simple yet powerful tool to help you identify and visualize colors instantly, whether you're a developer, designer, artist, or just curious about the world of colors.
+---
+
+## 📖 Project Description
+
+This project is a **Real-Time Color Detector** developed in Python using **OpenCV** and **Pandas**. It captures video from your **webcam**, identifies the average color at the center of the frame, and displays the **name**, **RGB values**, and **HEX code** of that color — all in real time.
+
+It’s a lightweight yet powerful tool, ideal for developers, designers, artists, or anyone curious about exploring the world of colors through computer vision.
+
+---
+
+## 🎯 Objective
+
+The main goal of this project is to apply **computer vision** concepts in a practical way by using Python libraries to detect and interpret colors from live webcam input. This helps solidify skills learned in the CS50 course and showcases real-world application of programming knowledge.
+
+---
+
+## 🛠️ Technologies Used
+
+- 🐍 Python 3  
+- 🧠 OpenCV  
+- 📊 Pandas  
+- 📷 Webcam Input  
+- 📁 CSV Dataset for Color Names
 
 ---
 
 ## 🖼️ Features
 
-- 📷 Real-time webcam color detection  
+- 📷 Real-time color detection via webcam  
 - 🎯 Detects color from the center of the screen  
 - 🌈 Displays:
-  - Color name (based on closest match)
+  - Color name (closest match)
   - RGB values
-  - HEX code
-- 🧠 Automatically adjusts text color for better readability
-- 💡 Clean and modern UI with translucent overlay and shadowed text
-- 🧩 Modular and easy to expand
+  - HEX code  
+- 🧠 Smart contrast: adjusts text color for readability  
+- 🧩 Modular code structure  
+- 💡 Clean, modern UI with overlay and shadows
 
 ---
 
-## 📁 How It Works
+## ⚙️ How It Works
 
-1. A 60x60 region is selected in the center of the webcam frame.
-2. The average color of that region is calculated.
-3. The script finds the closest color match from a CSV dataset.
-4. The result is rendered on the screen with RGB and HEX info.
+1. Captures video feed from webcam.
+2. Selects a 60x60 pixel region at the center of the frame.
+3. Calculates the average color of that region.
+4. Compares it with a CSV database of colors to find the closest match.
+5. Displays the matched color name, RGB, and HEX values on the screen.
 
 ---
 
-## 📸 Screenshot
+## 🖼️ Screenshot
 
-![Color Detector Screenshot](https://via.placeholder.com/800x400.png?text=Color+Detector+clePreview)
+![Color Detector Screenshot](https://ibb.co/Y4hsKs9c)
 
 ---
 
@@ -39,9 +63,9 @@ It's a simple yet powerful tool to help you identify and visualize colors instan
 
 ### Prerequisites
 
-Make sure you have Python 3 installed. Then install the required libraries:
+Make sure Python 3 is installed on your machine. Then, install the required libraries using pip:
 
 ```bash
 pip install opencv-python pandas
-OR
+# OR
 py -m pip install opencv-python pandas
