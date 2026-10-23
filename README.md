@@ -30,7 +30,7 @@ Built with Python and OpenCV · Final project for [Harvard CS50x](https://cs50.h
 |---|---|
 | 📷 **Live webcam feed** | Reads every frame in real time, no photo upload needed |
 | 🎯 **Center sampling** | Averages a 60×60 px area instead of a single pixel, so noise doesn't flip the result |
-| 🌈 **Name + RGB + HEX** | Matches the nearest of 140 named colors and shows all three values on screen |
+| 🌈 **Name + RGB + HEX** | Matches the nearest of 141 named colors and shows all three values on screen |
 | 🧠 **Smart contrast** | Text switches between black and white depending on how bright the color is |
 | 🖼️ **Clean overlay** | Translucent color panel, swatch preview and PNG logo with real alpha blending |
 
@@ -81,7 +81,7 @@ flowchart LR
 ```
 color-detector/
 ├── color_detector.py   # capture, color matching and drawing
-├── colors.csv          # 140 named colors with HEX and RGB
+├── colors.csv          # 141 named colors with HEX and RGB
 ├── requirements.txt    # opencv-python, pandas
 ├── assets/
 │   └── harvard_logo.png
